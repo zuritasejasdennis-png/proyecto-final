@@ -1,10 +1,10 @@
 Teoría de Git
 
 ¿Qué es Git?
-Git es un **sistema de control de versiones distribuido** creado por **Linus Torvalds** (el mismo creador de Linux) en 2005.  
-Su propósito es registrar los cambios realizados en los archivos de un proyecto a lo largo del tiempo, de modo que varios desarrolladores puedan trabajar **simultáneamente** sin perder información ni sobrescribir el trabajo de otros.
+Git es un sistema de control de versiones distribuido creado por Linus Torvalds (el mismo creador de Linux) en 2005.  
+Su propósito es registrar los cambios realizados en los archivos de un proyecto a lo largo del tiempo, de modo que varios desarrolladores puedan trabajar simultáneamente sin perder información ni sobrescribir el trabajo de otros.
 
-En lugar de guardar copias completas del proyecto cada vez que se hace un cambio, Git almacena **diferencias (deltas)** entre versiones, lo que hace el proceso eficiente y rápido.
+En lugar de guardar copias completas del proyecto cada vez que se hace un cambio, Git almacena diferencias (deltas) entre versiones, lo que hace el proceso eficiente y rápido.
 
 ¿Por qué usar Git?
 
