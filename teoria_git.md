@@ -1,12 +1,12 @@
-Teoría de Git
+# Teoría de Git
 
-¿Qué es Git?
+## ¿Qué es Git?
 Git es un sistema de control de versiones distribuido creado por Linus Torvalds (el mismo creador de Linux) en 2005.  
 Su propósito es registrar los cambios realizados en los archivos de un proyecto a lo largo del tiempo, de modo que varios desarrolladores puedan trabajar simultáneamente sin perder información ni sobrescribir el trabajo de otros.
 
 En lugar de guardar copias completas del proyecto cada vez que se hace un cambio, Git almacena diferencias (deltas) entre versiones, lo que hace el proceso eficiente y rápido.
 
-¿Por qué usar Git?
+## ¿Por qué usar Git?
 
 Git se ha convertido en una herramienta fundamental en el desarrollo de software moderno por las siguientes razones:
 
@@ -26,7 +26,7 @@ Git se ha convertido en una herramienta fundamental en el desarrollo de software
 5. Integración con plataformas modernas:
    Git se integra con herramientas como GitHub, GitLab y Bitbucket, que facilitan el trabajo en equipo, revisiones de código y despliegues automáticos.
    
-¿Cuándo usar Git?
+## ¿Cuándo usar Git?
 
 Git puede usarse prácticamente en cualquier proyecto de software, sin importar su tamaño.  
 Se recomienda usarlo:
@@ -36,7 +36,7 @@ Se recomienda usarlo:
 - En proyectos académicos o profesionales, para entregar versiones claras y verificables.  
 - En experimentación: puedes crear ramas (branches) para probar nuevas ideas sin afectar el código principal.
 
-Comandos fundamentales de Git
+## Comandos fundamentales de Git
 
 | Comando | Descripción |
 
