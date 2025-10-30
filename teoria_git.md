@@ -54,6 +54,8 @@ Se recomienda usarlo:
 
 | git pull | Descarga y fusiona los cambios del repositorio remoto. |
 
+
+
 | git branch | Muestra o crea ramas en el proyecto. |
 
 | git checkout <rama> | Cambia entre ramas o versiones del código. |
