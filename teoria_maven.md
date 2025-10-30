@@ -1,13 +1,13 @@
-Teoría de Maven
+# Teoría de Maven
 
-¿Qué es Maven?
+## ¿Qué es Maven?
 
 Apache Maven es una herramienta de gestión y automatización de proyectos Java.  
 Su nombre viene de una palabra yidis que significa “acumulador de conocimiento”, y su objetivo principal es simplificar la construcción (build), el manejo de dependencias y la organización de proyectos en Java.
 
 Antes de Maven, los desarrolladores configuraban manualmente librerías y rutas, lo que podía causar conflictos entre versiones o errores de compilación. Maven resuelve esto usando un archivo de configuración central llamado pom.xml (roject Object Model).
 
-Objetivos principales de Maven
+## Objetivos principales de Maven
 
 1. Estandarizar proyectos Java 
    Todos los proyectos Maven tienen la misma estructura de carpetas, facilitando que cualquier programador pueda entenderlos rápidamente.
@@ -22,7 +22,7 @@ Objetivos principales de Maven
 4. Integrar herramientas de prueba y despliegue  
    Soporta frameworks como JUnit, TestNG o Mockito, y puede integrarse con CI/CD (por ejemplo, Jenkins o GitHub Actions).
 
-¿Por qué usar Maven?
+## ¿Por qué usar Maven?
 
 | Razón | Descripción |
 | Automatización | Permite compilar, probar y empaquetar con un solo comando. |
