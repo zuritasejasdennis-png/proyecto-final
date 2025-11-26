@@ -43,4 +43,4 @@ El análisis de datos debe considerar los siguientes errores de medición, con l
 * Velocidad ($v_e$): $0.001 [m/s]$
 
 ## 4. Adjunto de Gráficos
-
+![Gráfico de Posición vs. Tiempo (Masa 4m)](grafica_4m.png)
