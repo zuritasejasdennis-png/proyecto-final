@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="proyecto-final" />
+        <module name="proyecto-final-fisica" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="proyecto-final" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

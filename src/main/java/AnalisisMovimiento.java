@@ -4,7 +4,6 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,12 +15,12 @@ public class AnalisisMovimiento {
 
         XYSeries series = new XYSeries("Posición vs Tiempo (Masa 4m)");
 
-        String csvFile = "datos_masa_4m.csv"; // Asegúrate que el nombre coincida
+        String csvFile = "datos_masa_4m.csv";
         String line;
         String cvsSplitBy = ",";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            br.readLine(); // Saltar la cabecera (t,x,v)
+            br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] datos = line.split(cvsSplitBy);
                 double tiempo = Double.parseDouble(datos[0]);
@@ -35,9 +34,9 @@ public class AnalisisMovimiento {
 
         XYSeriesCollection dataset = new XYSeriesCollection(series);
         JFreeChart chart = ChartFactory.createXYLineChart(
-                "Movimiento Armónico Simple", // Título
-                "Tiempo (s)",                 // Eje X
-                "Posición (m)",               // Eje Y
+                "Movimiento Armónico Simple",
+                "Tiempo (s)",
+                "Posición (m)",
                 dataset,
                 PlotOrientation.VERTICAL,
                 true, true, false
