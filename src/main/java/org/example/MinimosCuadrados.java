@@ -28,17 +28,15 @@ public class MinimosCuadrados {
 
     public double getInterseccionB() {
         int n = x.length;
-        double promedioY = 0;
-        double promedioX = 0;
-        double sumY = 0;
-        double sumX = 0;
+        double sumX = 0, sumY = 0;
 
-        for(int i=0; i<n; i++){
-            sumY += y[i];
+        for (int i = 0; i < n; i++) {
             sumX += x[i];
+            sumY += y[i];
         }
-        promedioY = sumY / n;
-        promedioX = sumX / n;
+
+        double promedioX = sumX / n;
+        double promedioY = sumY / n;
 
         return promedioY - (getPendienteA() * promedioX);
     }
