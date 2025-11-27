@@ -67,3 +67,27 @@ $$k = \frac{4\pi^2}{1.0} \approx 39.48$$
 aqui el gráfico que muestra la linealización de los datos y la recta de ajuste obtenida.
 
 ![Gráfico Linealizado de T² vs Masa](grafica_mmc_final.png)
+
+## 5. Quinta Semana: Predicción del Movimiento
+
+###  Cálculo de la Constante Elástica (k)
+
+La constante elástica $k$ se obtuvo a partir de la pendiente $A$ del ajuste lineal de Mínimos Cuadrados, utilizando la relación:
+
+$$k = \frac{4\pi^2}{A}$$
+
+* Valor de la Pendiente obtenido: $A = 1.0$
+* Cálculo de $k$: $$k = \frac{4\pi^2}{1.0} \approx 39.478$$
+
+**Valor representativo de k:** $\mathbf{39.48 \text{ N/m}}$
+
+#### Error de k ($\Delta k$)
+
+El error de $k$ depende del error en la pendiente ($\Delta A$). La propagación del error es:
+$$\Delta k = \frac{4\pi^2}{A^2} \Delta A$$
+
+Dado que el cálculo del error de la pendiente ($\Delta A$) por MMC es una tarea pendiente de la Cuarta Semana (Persona 3) y fue omitida, se **asumirá** un error de $\Delta A = 0.05$ para fines de demostración.
+* Cálculo del Error (con $\Delta A = 0.05$ asumido):
+    $$\Delta k = \frac{4\pi^2}{(1.0)^2} \times 0.05 \approx 39.478 \times 0.05 \approx 1.97 \text{ N/m}$$
+
+**Resultado Final:** $\mathbf{k = (39.5 \pm 2.0) \text{ N/m}}$
