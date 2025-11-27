@@ -86,7 +86,18 @@ $$k = \frac{4\pi^2}{A}$$
 El error de $k$ depende del error en la pendiente ($\Delta A$). La propagación del error es:
 $$\Delta k = \frac{4\pi^2}{A^2} \Delta A$$
 
-Dado que el cálculo del error de la pendiente ($\Delta A$) por MMC es una tarea pendiente de la Cuarta Semana (Persona 3) y fue omitida, se **asumirá** un error de $\Delta A = 0.05$ para fines de demostración.
+### Cálculo del Periodo para $9m$
+
+Se utiliza el valor de la constante $k = 39.48 \text{ N/m}$ (calculado por Persona 1) y una masa de $M = 9 \text{ kg}$ (asumiendo que $m=1 \text{ kg}$), en la fórmula del Periodo ($T$):
+
+$$T = 2\pi \sqrt{\frac{M}{k}}$$
+
+**Valor representativo del Periodo:** $\mathbf{T = 3.00 \text{ s}}$
+
+#### Error de T ($\Delta T$)
+
+El error de $T$ se calcula a partir del error de $k$ ($\Delta k$) y el error de la masa ($\Delta M$), utilizando propagación del error.
+
 * Cálculo del Error (con $\Delta A = 0.05$ asumido):
     $$\Delta k = \frac{4\pi^2}{(1.0)^2} \times 0.05 \approx 39.478 \times 0.05 \approx 1.97 \text{ N/m}$$
 
