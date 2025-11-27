@@ -4,76 +4,43 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
 import javax.swing.*;
-import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class AnalisisMovimiento {
 
     public static void main(String[] args) {
-        ArrayList<Double> xList = new ArrayList<>();
-        ArrayList<Double> yList = new ArrayList<>();
 
-        XYSeries seriesDatos = new XYSeries("Datos Experimentales (Linealizados)");
+        final double T = 3.00;
+        final double AMPLITUD = 1.0;
+        final double OMEGA = 2 * Math.PI / T;
 
-        String csvFile = "datos_linealizados.csv";
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            br.readLine(); // Saltar cabecera
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                double m = Double.parseDouble(values[0]);
-                double t2 = Double.parseDouble(values[1]);
+        XYSeries seriesOscilacion = new XYSeries("Posición vs Tiempo (Masa 9m)");
 
-                xList.add(m);
-                yList.add(t2);
-                seriesDatos.add(m, t2);
-            }
-        } catch (IOException e) { e.printStackTrace(); }
+        double tiempoMax = T * 1.5;
+        int numPuntos = 100;
+        double dt = tiempoMax / numPuntos;
 
-        double[] xArray = xList.stream().mapToDouble(d -> d).toArray();
-        double[] yArray = yList.stream().mapToDouble(d -> d).toArray();
+        for (int i = 0; i <= numPuntos; i++) {
+            double t = i * dt;
+            double x_posicion = AMPLITUD * Math.cos(OMEGA * t);
+            seriesOscilacion.add(t, x_posicion);
+        }
 
-        MinimosCuadrados mmc;
-        mmc = new MinimosCuadrados(xArray, yArray);
-        double A = mmc.getPendienteA();
-        double B = mmc.getInterseccionB();
-
-        System.out.println("Resultados MMC:");
-        System.out.println("Pendiente (A): " + A);
-        System.out.println("Intersección (B): " + B);
-
-        XYSeries seriesAjuste = new XYSeries("Ajuste Lineal (MMC)");
-        double xMin = xArray[0];
-        double xMax = xArray[xArray.length - 1];
-
-        seriesAjuste.add(xMin, A * xMin + B);
-        seriesAjuste.add(xMax, A * xMax + B);
+        System.out.println("Gráfico generado para M=9m, T=" + T + "s");
 
         XYSeriesCollection dataset = new XYSeriesCollection();
-        dataset.addSeries(seriesDatos);
-        dataset.addSeries(seriesAjuste);
+        dataset.addSeries(seriesOscilacion);
 
         JFreeChart chart = ChartFactory.createXYLineChart(
-                "Linealización: T² vs Masa",
-                "Masa (m)",
-                "Periodo al Cuadrado (T²)",
+                "Movimiento Armónico Simple (Predicción 9m)",
+                "Tiempo (t) [s]",
+                "Posición (x) [m]",
                 dataset,
                 PlotOrientation.VERTICAL,
                 true, true, false
         );
 
-
-        JFrame frame = new JFrame("Gráfico Final - Persona 3");
+        JFrame frame = new JFrame("Gráfico Final - Predicción 9m");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new ChartPanel(chart));
         frame.pack();
