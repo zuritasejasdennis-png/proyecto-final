@@ -102,3 +102,17 @@ El error de $T$ se calcula a partir del error de $k$ ($\Delta k$) y el error de 
     $$\Delta k = \frac{4\pi^2}{(1.0)^2} \times 0.05 \approx 39.478 \times 0.05 \approx 1.97 \text{ N/m}$$
 
 **Resultado Final:** $\mathbf{k = (39.5 \pm 2.0) \text{ N/m}}$
+
+### 5.3 Persona 3: Gráfica de Predicción del Movimiento ($9m$)
+
+Se utilizó el Periodo predicho ($T = 3.00 \text{ s}$) y la amplitud observada en las tablas iniciales ($A_{max} = 1.0 \text{ m}$) para generar la gráfica de la función de posición $x(t)$ para la nueva masa $M=9m$:
+
+$$x(t) = A_{max} \cos(\omega t)$$
+
+El objetivo es visualizar el comportamiento del sistema sin la necesidad de realizar un nuevo experimento o simulación de datos en crudo.
+
+**Gráfica de Posición (Masa 9m):**
+
+![Gráfico de Predicción de la Oscilación para Masa 9m](grafica_9m_final.png)
+
+**Conclusión de la Predicción:** La gráfica muestra que la masa de $9m$ oscila con una frecuencia más baja que las masas anteriores, completando una oscilación completa en **3.00 segundos**, lo que es consistente con la relación teórica del MAS de que el periodo es directamente proporcional a la raíz cuadrada de la masa ($T \propto \sqrt{M}$).
