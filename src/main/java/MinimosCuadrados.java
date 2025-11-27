@@ -1,4 +1,3 @@
-package org.example;
 public class MinimosCuadrados {
 
     private double[] x;
