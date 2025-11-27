@@ -44,3 +44,26 @@ El análisis de datos debe considerar los siguientes errores de medición, con l
 
 ## 4. Adjunto de Gráficos
 ![Gráfico de Posición vs. Tiempo (Masa 4m)](grafica_4m.png)
+
+## 4. Resultados del Análisis de Mínimos Cuadrados (MMC)
+
+El ajuste lineal de los datos transformados ($T^2$ vs $m$) produjo una línea recta con los siguientes coeficientes, validando la relación teórica $T^2 \propto m$:
+
+| Coeficiente | Valor Obtenido |
+| :---: | :---: |
+| Pendiente (A) | **1.0** |
+| Intersección (B) | **0.0** |
+
+### Cálculo de la Constante Elástica (k)
+
+Utilizando la Pendiente $A$, se calcula la constante $k$ con la fórmula $k = 4\pi^2 / A$:
+
+$$k = \frac{4\pi^2}{1.0} \approx 39.48$$
+
+**Resultado Final:** La constante elástica del resorte es **$k = 39.48 \text{ N/m}$**.
+
+### Gráfico de Ajuste Lineal:
+
+aqui el gráfico que muestra la linealización de los datos y la recta de ajuste obtenida.
+
+![Gráfico Linealizado de T² vs Masa](grafica_mmc_final.png)
