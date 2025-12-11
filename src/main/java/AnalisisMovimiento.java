@@ -23,7 +23,7 @@ public class AnalisisMovimiento {
         ArrayList<Double> xList = new ArrayList<>();
         ArrayList<Double> yList = new ArrayList<>();
 
-        XYSeries seriesDatos = new XYSeries("Datos Experimentales (Linealizados)");
+        XYSeries seriesDatos = new XYSeries("Datos Linealizados");
 
         String csvFile = "datos_linealizados.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -73,7 +73,7 @@ public class AnalisisMovimiento {
         );
 
 
-        JFrame frame = new JFrame("Gráfico Final - Persona 3");
+        JFrame frame = new JFrame("Gráfico Final");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new ChartPanel(chart));
         frame.pack();

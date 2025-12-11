@@ -67,3 +67,52 @@ $$k = \frac{4\pi^2}{1.0} \approx 39.48$$
 aqui el gráfico que muestra la linealización de los datos y la recta de ajuste obtenida.
 
 ![Gráfico Linealizado de T² vs Masa](grafica_mmc_final.png)
+
+## 5. Quinta Semana: Predicción del Movimiento
+
+###  Cálculo de la Constante Elástica (k)
+
+La constante elástica $k$ se obtuvo a partir de la pendiente $A$ del ajuste lineal de Mínimos Cuadrados, utilizando la relación:
+
+$$k = \frac{4\pi^2}{A}$$
+
+* Valor de la Pendiente obtenido: $A = 1.0$
+* Cálculo de $k$: $$k = \frac{4\pi^2}{1.0} \approx 39.478$$
+
+**Valor representativo de k:** $\mathbf{39.48 \text{ N/m}}$
+
+#### Error de k ($\Delta k$)
+
+El error de $k$ depende del error en la pendiente ($\Delta A$). La propagación del error es:
+$$\Delta k = \frac{4\pi^2}{A^2} \Delta A$$
+
+### Cálculo del Periodo para $9m$
+
+Se utiliza el valor de la constante $k = 39.48 \text{ N/m}$ (calculado por Persona 1) y una masa de $M = 9 \text{ kg}$ (asumiendo que $m=1 \text{ kg}$), en la fórmula del Periodo ($T$):
+
+$$T = 2\pi \sqrt{\frac{M}{k}}$$
+
+**Valor representativo del Periodo:** $\mathbf{T = 3.00 \text{ s}}$
+
+#### Error de T ($\Delta T$)
+
+El error de $T$ se calcula a partir del error de $k$ ($\Delta k$) y el error de la masa ($\Delta M$), utilizando propagación del error.
+
+* Cálculo del Error (con $\Delta A = 0.05$ asumido):
+  $$\Delta k = \frac{4\pi^2}{(1.0)^2} \times 0.05 \approx 39.478 \times 0.05 \approx 1.97 \text{ N/m}$$
+
+**Resultado Final:** $\mathbf{k = (39.5 \pm 2.0) \text{ N/m}}$
+
+### 5.3 Persona 3: Gráfica de Predicción del Movimiento ($9m$)
+
+Se utilizó el Periodo predicho ($T = 3.00 \text{ s}$) y la amplitud observada en las tablas iniciales ($A_{max} = 1.0 \text{ m}$) para generar la gráfica de la función de posición $x(t)$ para la nueva masa $M=9m$:
+
+$$x(t) = A_{max} \cos(\omega t)$$
+
+El objetivo es visualizar el comportamiento del sistema sin la necesidad de realizar un nuevo experimento o simulación de datos en crudo.
+
+**Gráfica de Posición (Masa 9m):**
+
+![Gráfico de Predicción de la Oscilación para Masa 9m](grafica_9m_final.png)
+
+**Conclusión de la Predicción:** La gráfica muestra que la masa de $9m$ oscila con una frecuencia más baja que las masas anteriores, completando una oscilación completa en **3.00 segundos**, lo que es consistente con la relación teórica del MAS de que el periodo es directamente proporcional a la raíz cuadrada de la masa ($T \propto \sqrt{M}$).

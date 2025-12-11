@@ -1,0 +1,10 @@
+# Ignorar carpeta de compilación de Maven
+target/
+
+# Ignorar archivos compilados de Java
+*.class
+
+# Ignorar archivos de configuración intellij
+.idea/
+*.iml
+*.iws
