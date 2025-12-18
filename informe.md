@@ -27,7 +27,7 @@ Para cumplir con los estándares profesionales exigidos en la etapa final del pr
 ### 3.1 Adquisición de Datos
 Se registraron oscilaciones para distintas masas ($m, 2m, 3m, 4m$). Los datos de posición vs. tiempo fueron digitalizados en archivos CSV para su procesamiento masivo.
 
-![Gráfico Masa 4m](grafica_4m.png)
+![Gráfico Masa 4m](imagenes/grafica_4m.png)
 *Figura 1: Datos experimentales de posición vs. tiempo.*
 
 ### 3.2 Algoritmo de Mínimos Cuadrados
@@ -38,7 +38,7 @@ Al procesar los datos, el software determinó los coeficientes de la recta $y = 
 * **Intersección ($B$):** Cercana a cero, validando el modelo teórico.
 * **Constante Elástica ($k$):** Derivada de la pendiente como $k = 4\pi^2 / A$.
 
-![Gráfico de Linealización](grafica_mmc_final.png)
+![Gráfico de Linealización](imagenes/grafica_mmc_final.png)
 *Figura 2: Ajuste lineal generado por el software ($R^2 \approx 1.0$).*
 
 ---
@@ -54,7 +54,7 @@ $$T_{9m} = T_m \cdot 3 = 2.0 \text{ s} \cdot 3 = \mathbf{6.00 \text{ s}}$$
 ### 4.2 Simulación Visual
 El código principal (`AnalisisMovimiento.java`) fue actualizado para reflejar este cálculo físico. La simulación genera una onda senoidal con un periodo de 6 segundos, guardando automáticamente la evidencia visual.
 
-![Predicción Masa 9m](grafica_9m_final.png)
+![Predicción Masa 9m](imagenes/grafica_9m_final.png)
 *Figura 3: Simulación computacional corregida para la masa 9m (Periodo = 6.0s).*
 
 ---

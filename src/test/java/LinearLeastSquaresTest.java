@@ -5,8 +5,7 @@ public class LinearLeastSquaresTest {
 
     @Test
     public void testAjusteLinealPerfecto() {
-        // DATOS ID: y = 1x + 0
-        // Si m=1, T2=1; Si m=2, T2=2...
+
         double[] x = {1.0, 2.0, 3.0, 4.0, 5.0};
         double[] y = {1.0, 2.0, 3.0, 4.0, 5.0};
 
