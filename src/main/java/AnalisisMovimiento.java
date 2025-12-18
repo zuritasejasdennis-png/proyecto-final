@@ -17,12 +17,8 @@ public class AnalisisMovimiento {
         ArrayList<Double> yList = new ArrayList<>();
         XYSeries seriesDatos = new XYSeries("Datos Experimentales");
 
- actualizacion-informe-final
         String csvFile = "datos/datos_linealizados.csv";
 
-
-        String csvFile = "datos/datos_linealizados.csv";
-   main
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             br.readLine();
             String line;
@@ -77,7 +73,6 @@ public class AnalisisMovimiento {
         frameMMC.setVisible(true);
 
         double masaPrediccion = 9.0;
-
         double T_predicho = 2 * Math.PI * Math.sqrt(masaPrediccion / k_calculada);
 
         System.out.println("Periodo Predicho para 9m: " + String.format("%.2f", T_predicho) + " s");
@@ -111,7 +106,7 @@ public class AnalisisMovimiento {
         framePred.setVisible(true);
 
         try {
-            System.out.println("Guardando imágenes en carpeta 'imagenes/");
+            System.out.println("Guardando imágenes en carpeta 'imagenes/'.");
 
             org.jfree.chart.ChartUtils.saveChartAsPNG(
                     new java.io.File("imagenes/grafica_mmc_final.png"), chartMMC, 800, 600);
