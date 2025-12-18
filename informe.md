@@ -1,69 +1,81 @@
-# Informe del Laboratorio de Física General: Movimiento Armónico Simple
+# Informe Final: Estudio Computacional del Movimiento Armónico Simple
 
-## 1. Fundamento Teórico
+**Estudiante:** Dennis zurita sejas 
+**Asignatura:** Laboratorio de Física General
 
-El Movimiento Armónico Simple es un movimiento periódico, oscilatorio y vibratorio, producido por la acción de una fuerza recuperadora que es directamente proporcional al desplazamiento respecto a la posición de equilibrio ($x=0$).
+---
 
-La fuerza restauradora, según la Ley de Hooke, está dada por:
+## 1. Resumen Ejecutivo
+El objetivo principal de este proyecto fue modernizar el análisis del Movimiento Armónico Simple (MAS) mediante el desarrollo de una herramienta de software en **Java**. El sistema automatiza el procesamiento de datos experimentales, calcula la constante elástica ($k$) mediante regresión lineal y simula el comportamiento de masas no medidas, asegurando la calidad del código mediante prácticas de ingeniería de software.
 
-   ## F = -kx ##
+## 2. Metodología y Entorno de Desarrollo
+Para cumplir con los estándares profesionales exigidos en la etapa final del proyecto (Semana 6), se implementó la siguiente infraestructura técnica:
 
-Donde $k$ es la constante elástica. La relación para el Periodo ($T$) es:
+* **Lenguaje:** Java 17.
+* **Gestión de Dependencias:** **Apache Maven** (ver `pom.xml`), utilizado para integrar librerías y gestionar el ciclo de vida del proyecto.
+* **Librerías Externas:**
+    * `JFreeChart (v1.5.3)`: Para la generación profesional de gráficas científicas.
+    * `JUnit 5 (v5.10.0)`: Para la implementación de pruebas unitarias automatizadas.
+* **Control de Versiones:**
+    * **Git & GitHub:** Se utilizó un archivo `.gitignore` para mantener el repositorio limpio, excluyendo archivos binarios (`target/`, `.class`) y configuraciones locales.
+    * **Flujo de Trabajo:** Se emplearon ramas (branches) y Pull Requests para la integración segura de cambios.
 
-$$T = 2\pi \sqrt{\frac{m}{k}}$$
+---
 
-## 2. Resultados de los Cálculos
+## 3. Análisis Experimental (Semanas 2-4)
 
-### 2.1 Cálculo de la Constante Elástica del Resorte ($k$)
+### 3.1 Adquisición de Datos
+Se registraron oscilaciones para distintas masas ($m, 2m, 3m, 4m$). Los datos de posición vs. tiempo fueron digitalizados en archivos CSV para su procesamiento masivo.
 
-Utilizando los datos de la Tabla 6 (Masa $m$), se observa que el Periodo ($T_m$) es de $2.0$ segundos (pues de $t=0.0s$ a $t=1.0s$ se recorre medio periodo, $T/2$).
+![Gráfico Masa 4m](grafica_4m.png)
+*Figura 1: Datos experimentales de posición vs. tiempo.*
 
-Despejando $k$ de la fórmula del Periodo:
-$$k = 4\pi^2 \frac{m}{T^2}$$
-$$k = 4\pi^2 \frac{m}{(2.0)^2} = \pi^2 m$$
+### 3.2 Algoritmo de Mínimos Cuadrados
+Se desarrolló la clase `MinimosCuadrados.java` para linealizar la relación $T^2 \propto m$. Esta clase fue **refactorizada** para incluir validaciones de seguridad que impiden el cálculo con conjuntos de datos vacíos o insuficientes.
 
-**Resultado:** La constante elástica es $k = \pi^2 m$.
+Al procesar los datos, el software determinó los coeficientes de la recta $y = Ax + B$:
+* **Pendiente ($A$):** Calculada computacionalmente.
+* **Intersección ($B$):** Cercana a cero, validando el modelo teórico.
+* **Constante Elástica ($k$):** Derivada de la pendiente como $k = 4\pi^2 / A$.
 
-### 2.2 Cálculo del Periodo de Oscilación para una masa $9m$
+![Gráfico de Linealización](grafica_mmc_final.png)
+*Figura 2: Ajuste lineal generado por el software ($R^2 \approx 1.0$).*
 
-El Periodo es proporcional a la raíz cuadrada de la masa ($T \propto \sqrt{m}$).
+---
 
-$$T_{9m} = T_m \cdot \sqrt{\frac{9m}{m}} = 3 \cdot T_m$$
+## 4. Predicción y Simulación (Semana 5 - Corregido)
 
-Dado que $T_m = 2.0s$:
-$$T_{9m} = 3 \cdot 2.0 \text{ s} = 6.0 \text{ s}$$
+### 4.1 Cálculo del Periodo para 9kg
+Basado en los datos experimentales donde la masa unitaria ($m$) presentó un periodo base de $T \approx 2.0 \text{ s}$, se utilizó el modelo calibrado para predecir el comportamiento de una masa de **9 kg**.
 
-**Resultado:** El periodo para una masa de $9m$ es de **$6.0$ segundos**.
+Según la ley del MAS ($T \propto \sqrt{m}$), al aumentar la masa 9 veces, el periodo debe triplicarse ($\sqrt{9}=3$):
+$$T_{9m} = T_m \cdot 3 = 2.0 \text{ s} \cdot 3 = \mathbf{6.00 \text{ s}}$$
 
-## 3. Consideraciones de Error
+### 4.2 Simulación Visual
+El código principal (`AnalisisMovimiento.java`) fue actualizado para reflejar este cálculo físico. La simulación genera una onda senoidal con un periodo de 6 segundos, guardando automáticamente la evidencia visual.
 
-El análisis de datos debe considerar los siguientes errores de medición, con la posición de equilibrio en $x=0$:
-* Tiempo ($t_e$): $0.001 [s]$
-* Posición ($x_e$): $0.001 [m]$
-* Velocidad ($v_e$): $0.001 [m/s]$
+![Predicción Masa 9m](grafica_9m_final.png)
+*Figura 3: Simulación computacional corregida para la masa 9m (Periodo = 6.0s).*
 
-## 4. Adjunto de Gráficos
-![Gráfico de Posición vs. Tiempo (Masa 4m)](grafica_4m.png)
+---
 
-## 4. Resultados del Análisis de Mínimos Cuadrados (MMC)
+## 5. Aseguramiento de Calidad (Semana 6)
 
-El ajuste lineal de los datos transformados ($T^2$ vs $m$) produjo una línea recta con los siguientes coeficientes, validando la relación teórica $T^2 \propto m$:
+Siguiendo los requerimientos de robustez y calidad de software, se implementó un módulo de pruebas unitarias (`Unit Testing`) en la carpeta `src/test/java`.
 
-| Coeficiente | Valor Obtenido |
-| :---: | :---: |
-| Pendiente (A) | **1.0** |
-| Intersección (B) | **0.0** |
+### 5.1 Módulos de Prueba (JUnit)
+Se crearon tres clases de prueba para validar la integridad del código antes de la entrega:
 
-### Cálculo de la Constante Elástica (k)
+1.  **`LinearLeastSquaresTest`:** Verifica la exactitud matemática del algoritmo usando datos ideales conocidos (pendiente unitaria).
+2.  **`CoeficientesTest`:** Valida que el cálculo de $A$ y $B$ con datos experimentales simulados arroje valores dentro de rangos físicos posibles.
+3.  **`SumaTest` (Integridad):** Prueba la resistencia del código ante datos atípicos (negativos, ceros) y asegura que se lancen excepciones controladas si los arrays son inválidos.
 
-Utilizando la Pendiente $A$, se calcula la constante $k$ con la fórmula $k = 4\pi^2 / A$:
+### 5.2 Limpieza del Repositorio
+Se depuró el historial de Git eliminando la carpeta `target` y agregando un archivo `.gitignore`. Esto asegura que el repositorio sea portable y pueda ser clonado y compilado en cualquier máquina sin conflictos de versiones compiladas.
 
-$$k = \frac{4\pi^2}{1.0} \approx 39.48$$
+---
 
-**Resultado Final:** La constante elástica del resorte es **$k = 39.48 \text{ N/m}$**.
-
-### Gráfico de Ajuste Lineal:
-
-aqui el gráfico que muestra la linealización de los datos y la recta de ajuste obtenida.
-
-![Gráfico Linealizado de T² vs Masa](grafica_mmc_final.png)
+## 6. Conclusiones
+1.  **Validación del Modelo:** La predicción computacional ($T=6s$ para $9m$) coincide con la teoría física, demostrando la validez del modelo linealizado.
+2.  **Robustez:** La implementación de manejo de excepciones y validaciones en el constructor de `MinimosCuadrados` previene fallos en tiempo de ejecución.
+3.  **Ingeniería de Software:** El uso combinado
