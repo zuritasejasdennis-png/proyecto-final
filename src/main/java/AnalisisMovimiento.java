@@ -116,7 +116,7 @@ public class AnalisisMovimiento {
 
             System.out.println("¡Imágenes guardadas correctamente!");
         } catch (IOException e) {
-            System.err.println("Error al guardar imagen. ¿Creaste la carpeta 'imagenes'?: " + e.getMessage());
+            System.err.println("Error al guardar imagen: " + e.getMessage());
         }
     }
 }
