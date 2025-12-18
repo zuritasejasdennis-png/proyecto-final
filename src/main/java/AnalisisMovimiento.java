@@ -17,7 +17,7 @@ public class AnalisisMovimiento {
         ArrayList<Double> yList = new ArrayList<>();
         XYSeries seriesDatos = new XYSeries("Datos Experimentales");
 
-        String csvFile = "datos_linealizados.csv"; // Asegúrate de tener este archivo
+        String csvFile = "datos_linealizados.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             br.readLine();
             String line;
