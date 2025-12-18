@@ -11,10 +11,10 @@ public class LinearLeastSquaresTest {
 
         MinimosCuadrados mc = new MinimosCuadrados(x, y);
 
-        // Verificamos que la Pendiente (A)
+        //la Pendiente (A)
         assertEquals(1.0, mc.getPendienteA(), 0.0001, "El algoritmo falla en la pendiente ideal");
 
-        // Verificamos que la Intersección (B)
+        //Intersección (B)
         assertEquals(0.0, mc.getInterseccionB(), 0.0001, "El algoritmo falla en la intersección ideal");
     }
 }

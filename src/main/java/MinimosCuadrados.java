@@ -33,7 +33,7 @@ public class MinimosCuadrados {
         double denominador = (n * sumX2) - (sumX * sumX);
 
         if (denominador == 0) {
-            throw new ArithmeticException("El denominador es 0. No se puede calcular la pendiente (recta vertical).");
+            throw new ArithmeticException("El denominador es 0. No se puede calcular la pendiente.");
         }
 
         return numerador / denominador;
